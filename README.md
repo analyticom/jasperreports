@@ -1,3 +1,8 @@
+## ANALYTICOM build and deploy to local repository
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+<br/>
+/Users/mbaricevic/opt/apache-maven-3.8.4/bin/mvn deploy "-Dversion=6.20.0-patch-1" "-Drevision=6.20.0"
+
 # JasperReports® - Free Java Reporting Library
 
 The **JasperReports Library** is the world's most popular open source reporting engine. 
