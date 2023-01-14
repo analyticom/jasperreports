@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.sf.jasperreports</groupId>
 	<artifactId>jasperreports-parent</artifactId>
-	<version>${revision}</version>
+	<version>${version}</version>
 	<packaging>pom</packaging>
 	<name>JasperReports Library Artifacts</name>
 	<description>Free Java Reporting Library</description>
@@ -194,4 +194,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+    <repository>
+      <id>analyticom-mvn-extlibs-local</id>
+      <name>jfrog.analyticom.de-extlibs</name>
+      <url>https://jfrog.analyticom.de/artifactory/analyticom-mvn-extlibs-local</url>
+    </repository>
+  </distributionManagement>
 </project>

@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>net.sf.jasperreports</groupId>
 		<artifactId>jasperreports-parent</artifactId>
-		<version>${revision}</version>
+		<version>${version}</version>
 		<relativePath>./pom-parent.xml</relativePath>
 	</parent>
 	<groupId>net.sf.jasperreports</groupId>

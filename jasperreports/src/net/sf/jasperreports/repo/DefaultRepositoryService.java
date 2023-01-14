@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLStreamHandlerFactory;
 import java.nio.file.Path;
@@ -119,6 +120,16 @@ public class DefaultRepositoryService implements StreamRepositoryService
 			URL url = JRResourcesUtil.createURL(uri, urlHandlerFactory);
 			if (url != null)
 			{
+        try {
+          //fix to allow getting images from servers which rejects requests without 'User-Agent' HTTP header
+          HttpURLConnection httpcon = (HttpURLConnection) url.openConnection();
+          httpcon.addRequestProperty("User-Agent", "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0");
+          return httpcon.getInputStream();
+          
+        } catch (IOException e) {
+          log.error("Error while getting input stream from url, from servers which rejects requests without 'User-Agent' HTTP header: " + url);
+        }
+        
 				return JRLoader.getInputStream(url);
 			}
 
